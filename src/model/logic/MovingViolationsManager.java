@@ -448,6 +448,8 @@ public class MovingViolationsManager {
 		double ycoor = 0;
 		String locat = "";
 		int address = 0;
+		
+		
 		int street = 0;
 		IQueue lista = (IQueue) new Queue<VOMovingViolations>();
 		Iterator<VOMovingViolations> i = listaViolaciones.iterator();
