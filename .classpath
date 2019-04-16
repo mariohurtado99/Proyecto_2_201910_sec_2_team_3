@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/USER/Documents/Tercer semestre/Estructuras/P2 Diseño/Proyecto_2_201910_sec_2_team_3/commons-lang3-3.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/USER/Documents/Tercer semestre/Estructuras/P2 Diseño/Proyecto_2_201910_sec_2_team_3/opencsv-4.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
