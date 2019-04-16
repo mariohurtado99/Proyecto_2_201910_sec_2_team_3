@@ -455,6 +455,7 @@ public class MovingViolationsManager {
 		int street = 0;
 		IQueue lista = (IQueue) new Queue<VOMovingViolations>();
 		Iterator<VOMovingViolations> i = listaViolaciones.iterator();
+		
 		while(i.hasNext()) {
 			VOMovingViolations a = i.next();
 			if(a.getAddressId() == addressID) {
