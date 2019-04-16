@@ -1,2 +1,5 @@
 # Proyecto_2_201910_sec_2_team_3
-Mario Andrés Hurtado Sáenz - 201813888
+Parte A: 
+Andres Benitez Amaya - 201812815
+Parte B:
+Mario AndrÃ©s Hurtado SÃ¡enz - 201813888
