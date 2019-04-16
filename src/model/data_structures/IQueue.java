@@ -1,19 +1,30 @@
 package model.data_structures;
 
-public interface IQueue<T> extends Iterable<T>{
-	
-	/** Enqueue a new element at the end of the queue */
-	public void enqueue(T item);
-	
-	/** Dequeue the "first" element in the queue
-	 * @return "first" element or null if it doesn't exist
-	 */
-	public T dequeue();
-	
-	/** Evaluate if the queue is empty. 
-	 * @return true if the queue is empty. false in other case.
+public interface IQueue<T> extends Iterable<T>
+{
+
+	/**
+	 * Retorna true si la Cola esta vacia
+	 * @return true si la Cola esta vacia, false de lo contrario
 	 */
 	public boolean isEmpty();
 	
-	public int size();	
+	/**
+	 * Retorna el numero de elementos contenidos
+	 * @return el numero de elemntos contenidos
+	 */
+	public int size();
+	
+	/**
+	 * Inserta un nuevo elemento en la Cola
+	 * @param t el nuevo elemento que se va ha agregar
+	 */
+	public void enqueue(T t);
+	
+	/**
+	 * Quita y retorna el elemento agregado menos recientemente
+	 * @return el elemento agregado menos recientemente
+	 */
+	public T dequeue();
+	
 }
