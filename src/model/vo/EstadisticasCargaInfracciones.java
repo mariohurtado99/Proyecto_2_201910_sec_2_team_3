@@ -25,10 +25,14 @@ public class EstadisticasCargaInfracciones {
 	 * @param parametro2 con valor para un dato de la carga de archivos
 	 * 
 	 */
-	public EstadisticasCargaInfracciones()
+	public EstadisticasCargaInfracciones(int pTotalInfracciones, int pNumeroMeses, int[] pNumeroInfraccionesxMes, double[] pMiniMax)
 	{
 		// TODO Definir los parametros del metodo
 		// TODO inicializar valores de atributos con valores de parametros
+		totalInfracciones = pTotalInfracciones;
+		numeroMeses = pNumeroMeses;
+		numeroInfraccionesxMes = pNumeroInfraccionesxMes;
+		minimax = pMiniMax;
 	}
 	
 	/**

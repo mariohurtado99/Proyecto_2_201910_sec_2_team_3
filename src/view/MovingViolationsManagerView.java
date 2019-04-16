@@ -1,6 +1,7 @@
 package view;
 
 import model.data_structures.IQueue;
+import model.logic.MovingViolationsManager;
 import model.vo.*;
 
 public class MovingViolationsManagerView {
@@ -119,14 +120,13 @@ public class MovingViolationsManagerView {
 		}
 	}
 	
-	public void printReq1C(InfraccionesLocalizacion resultado) {
-		System.out.println(resultado.toString());
-		/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
-		/*		
+	public void printReq1C(InfraccionesLocalizacion resultado, int addressID) {
+		MovingViolationsManager m = new MovingViolationsManager();
+		resultado = m.consultarPorAddressId(addressID);
 		for(VOMovingViolations v: resultado.getListaInfracciones()) {
 			System.out.println(v.toString());
 		}
-		*/
+		
 	}
 	
 	public void printReq2C(InfraccionesFranjaHorariaViolationCode resultado) {
@@ -166,10 +166,10 @@ public class MovingViolationsManagerView {
 	}
 	
 	
-	public void printReq4C(Contenedora<InfraccionesViolationCode> resultados) {
-		//TODO La estructura Contenedora depende del metodo que retorna el resultado
-		//TODO Imprimir grafica ASCII con los codigos ordenados (de mayor a menor) por el total de sus infracciones 
-	}
+//	public void printReq4C(Contenedora<InfraccionesViolationCode> resultados) {
+//		//TODO La estructura Contenedora depende del metodo que retorna el resultado
+//		//TODO Imprimir grafica ASCII con los codigos ordenados (de mayor a menor) por el total de sus infracciones 
+//	}
 	
 	
 	
