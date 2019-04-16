@@ -53,9 +53,8 @@ public class Controller {
 				int semestre = sc.nextInt();
 				EstadisticasCargaInfracciones resumenCarga = model.loadMovingViolations(semestre);
 
-				//TODO Mostrar resultado de tipo EstadisticasCargaInfracciones con: 
 				//     total de infracciones cargadas, numero de infracciones cargadas por mes y zona Minimax (Xmin, Ymin) y (Xmax, Ymax)
-				//view.printResumenLoadMovingViolations( ... );
+				view.printResumenLoadMovingViolations( resumenCarga );
 				break;
 
 			case 1:

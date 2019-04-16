@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamico 
+public class ArregloDinamico<T> implements IArregloDinamico 
 {
 	
 	/**
@@ -19,6 +19,8 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 	 */
 
 	private T elementos[ ];
+	
+	
 
 	/**
 	 * Construye el arreglo con la capacidad dada por parametro.
@@ -101,7 +103,7 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 		T result = null; 
 		for (int u = 0; u < tamanio && result == null; u++)
 		{
-			if(elementos[u].compareTo(pDato) == 0)
+			if(((Comparable) elementos[u]).compareTo(pDato) == 0)
 				result = elementos[u];
 		}
 		return result;
@@ -116,7 +118,7 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 		T resultat = null; int l; 
 		for (l = 0; l < tamanio && resultat == null; l++)
 		{
-			if(elementos[l].compareTo(pDato) == 0)
+			if(((Comparable) elementos[l]).compareTo(pDato) == 0)
 				resultat = elementos[l];
 		}
 		l--;

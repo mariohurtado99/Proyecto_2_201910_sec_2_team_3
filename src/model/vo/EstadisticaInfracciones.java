@@ -1,6 +1,7 @@
 package model.vo;
 
 import model.data_structures.IQueue;
+import model.data_structures.Iterador;
 
 /**
  * Agrupa las infracciones mostrando estadísticas sobre los datos 
@@ -10,15 +11,20 @@ import model.data_structures.IQueue;
  * las infracciones. 
  */
 
-public class EstadisticaInfracciones {
+public class EstadisticaInfracciones 
+{
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "EstadisticaInfracciones [totalInfracciones=" + totalInfracciones + ",\n porcentajeAccidentes="
 				+ porcentajeAccidentes + ",\n porcentajeNoAccidentes=" + porcentajeNoAccidentes + ",\n valorTotal="
 				+ valorTotal + "]\n\n";
 	}
 
+	protected double accidentes;
+	
+	protected double sinAccidentes;
 	/**	
 	 * Numero total de infraciones del conjunto
 	 */
@@ -59,10 +65,14 @@ public class EstadisticaInfracciones {
 		this.listaInfracciones = lista;
 		totalInfracciones = listaInfracciones.size();
 		
-		//TODO Hacer el calculo de porcentajeAccidentes, porcentajeNoAccidentes y valorTotal
-		porcentajeAccidentes = -50.0;   //TODO Calcular con base en la lista
-		porcentajeNoAccidentes = -50.0; //TODO Calcular con base en la lista
-		valorTotal = -100000.0;         //TODO Calcular con base en la lista
+		porcentajeAccidentes = getPorcentajeAccidentes();   
+		porcentajeNoAccidentes = getPorcentajeNoAccidentes();  
+		valorTotal =  getValorTotal();        
+	
+		accidentes = 0;
+		sinAccidentes = 0;
+		
+		
 	}
 	
 	//=========================================================
@@ -74,7 +84,19 @@ public class EstadisticaInfracciones {
 	 * @return the total infracciones
 	 */
 	
-	public int getTotalInfracciones() {
+	public int getTotalInfracciones()
+	{
+		//Cuenta las infrecciones con accidente y sin accidente.
+		for(int i = 0; i <totalInfracciones; i++)
+		{
+			VOMovingViolations actual = listaInfracciones.dequeue();
+			if(actual.getAccidentIndicator().equals("Yes"))
+			{
+				accidentes++;
+			}
+			else
+				sinAccidentes++;
+		}
 		return totalInfracciones;
 	}	
 	
@@ -84,10 +106,9 @@ public class EstadisticaInfracciones {
 	 * @return the porcentaje accidentes
 	 */
 	
-	public double getPorcentajeAccidentes() {
-		//TODO Completar para que calcule el porcentaje de las infracciones del conjunto que sufrieron accidentes
-		//con respecto al total.
-		return porcentajeAccidentes;
+	public double getPorcentajeAccidentes() 
+	{
+		return (accidentes/totalInfracciones)*100;
 	}	
 
 
@@ -96,10 +117,9 @@ public class EstadisticaInfracciones {
 	 *
 	 * @return the porcentaje no accidentes
 	 */
-	public double getPorcentajeNoAccidentes() {
-		//TODO Completar para que calcule el porcentaje de las infracciones del conjunto que NO sufrieron accidentes
-		//con respecto al total.
-		return porcentajeNoAccidentes;
+	public double getPorcentajeNoAccidentes() 
+	{
+		return (sinAccidentes/totalInfracciones)*100;
 	}
 
 	/**
@@ -107,9 +127,9 @@ public class EstadisticaInfracciones {
 	 *
 	 * @return the valor total
 	 */
-	public double getValorTotal() {
-		//TODO Completar para calcular el valor total de dinero que representan las infracciones
-		return valorTotal;
+	public double getValorTotal() 
+	{
+		
 	}	
 
 	/**
@@ -117,7 +137,8 @@ public class EstadisticaInfracciones {
 	 *
 	 * @return the lista infracciones
 	 */
-	public IQueue<VOMovingViolations> getListaInfracciones() {
+	public IQueue<VOMovingViolations> getListaInfracciones()
+	{
 		return listaInfracciones;
 	}
 
@@ -127,7 +148,8 @@ public class EstadisticaInfracciones {
 	 * @param listaInfracciones the new lista infracciones
 	 */
 	
-	public void setListaInfracciones(IQueue<VOMovingViolations> listaInfracciones) {
+	public void setListaInfracciones(IQueue<VOMovingViolations> listaInfracciones) 
+	{
 		this.listaInfracciones = listaInfracciones;
 	}
 }

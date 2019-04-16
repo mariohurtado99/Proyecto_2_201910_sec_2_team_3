@@ -2,7 +2,7 @@ package model.data_structures;
 
 import java.util.Iterator;
 
-public class MaxHeapCP<T extends Comparable<T>> implements IColaPrioridad<T> 
+public class MaxHeapCP<T > implements IColaPrioridad<T> 
 {
 	private T[] pq;                  
 	private int n;                  

@@ -6,59 +6,68 @@ import model.vo.VOMovingViolations;
 
 public class Sort 
 {
-	
-    private static Comparator comparadorActual;
+
+	private static Comparator comparadorActual;
 	/**
 	 * Ordenar datos aplicando el algoritmo MergeSort
-	 * @param datos - conjunto de datos a ordenar (inicio) y conjunto de datos ordenados (final)
+	 * @param infraccionesLocalizacion - conjunto de datos a ordenar (inicio) y conjunto de datos ordenados (final)
 	 * @param ultimo 
 	 * @param mitad 
 	 * @param inicio 
 	 * @param aux 
 	 */
-	public static void ordenarMergeSort( VOMovingViolations[ ] datos, VOMovingViolations[] aux, int inicio, int mitad, int ultimo ) 
+	public static void ordenarMergeSort( ArregloDinamico<VOMovingViolations> infraccionesLocalizacion, VOMovingViolations[] aux, int inicio, int mitad, int ultimo ) 
 	{
 		for (int k = inicio; k <= ultimo; k++)
 		{	
-			aux[k] = datos[k]; 
+			aux[k] = infraccionesLocalizacion.darElemento(k); 
 		}
-		
+
 		int i = inicio;
 		int j = mitad+1;
 
 		for (int k = inicio; k <= ultimo; k++)
 		{
 			if      (i > mitad)            
-				datos[k] = aux[j++];
-			
+			{
+				infraccionesLocalizacion.eliminar(infraccionesLocalizacion.darElemento(k));
+				infraccionesLocalizacion.agregar(aux[j++]);
+			}
 			else if (j > ultimo)             
-				datos[k] = aux[i++];
-			
+			{
+				infraccionesLocalizacion.eliminar(infraccionesLocalizacion.darElemento(k));
+				infraccionesLocalizacion.agregar(aux[i++]);
+			}
 			else if (less(aux[j], aux[i])) 
-				datos[k] = aux[j++];
-			
+			{
+				infraccionesLocalizacion.eliminar(infraccionesLocalizacion.darElemento(k));
+				infraccionesLocalizacion.agregar(aux[j++]);
+			}
 			else                          
-				datos[k] = aux[i++];
+			{
+				infraccionesLocalizacion.eliminar(infraccionesLocalizacion.darElemento(k));
+				infraccionesLocalizacion.agregar(aux[i++]);
+			}
 		}
 	}
-	private static void sortM(VOMovingViolations[]datos, VOMovingViolations[] aux, int inicio, int fin)
+	private static void sortM(ArregloDinamico<VOMovingViolations> infraccionesLocalizacion, VOMovingViolations[] aux, int inicio, int fin)
 	{
 		if (fin<=inicio)
-			{
-				return;
-			}
-		
+		{
+			return;
+		}
+
 		int mid=inicio+(fin-inicio)/2;
-		sortM(datos, aux, inicio, mid);
-		sortM(datos, aux, mid+1, fin);
-		ordenarMergeSort(datos, aux, inicio, mid, fin);
+		sortM(infraccionesLocalizacion, aux, inicio, mid);
+		sortM(infraccionesLocalizacion, aux, mid+1, fin);
+		ordenarMergeSort(infraccionesLocalizacion, aux, inicio, mid, fin);
 	}
 
-	public static void sort(VOMovingViolations[]datos, Comparator entrada)
+	public static void sort(ArregloDinamico<VOMovingViolations> infraccionesLocalizacion, Comparator entrada)
 	{
 		comparadorActual = entrada;
-		VOMovingViolations[]aux = new VOMovingViolations[datos.length];
-		sortM(datos, aux, 0, datos.length-1);
+		VOMovingViolations[] aux = new VOMovingViolations[infraccionesLocalizacion.darTamanio()];
+		sortM(infraccionesLocalizacion, aux, 0, infraccionesLocalizacion.darTamanio());
 	}
 
 
@@ -86,7 +95,7 @@ public class Sort
 		datos[i] = datos[j]; 
 		datos[j] = temp;
 	}
-	
+
 	public static void invertirMuestra( VOMovingViolations[ ] datos )
 	{
 
@@ -97,8 +106,8 @@ public class Sort
 			nuevos[i] = datos[j];
 			j--;	
 		}
-            datos = nuevos;
-	
+		datos = nuevos;
+
 	}
 
 

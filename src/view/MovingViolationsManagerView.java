@@ -32,11 +32,13 @@ public class MovingViolationsManagerView {
 		
 	}
 	
-	public void printMessage(String mensaje) {
+	public void printMessage(String mensaje)
+	{
 		System.out.println(mensaje);
 	}
 	
-	public void printResumenLoadMovingViolations(EstadisticasCargaInfracciones resultados) {
+	public void printResumenLoadMovingViolations(EstadisticasCargaInfracciones resultados) 
+	{
 		int mes = 1;
 		System.out.println("Total de Infracciones :" + resultados.darTotalInfracciones());
 		for (int infraccionesXMes : resultados.darNumeroDeInfraccionesXMes())
@@ -48,8 +50,10 @@ public class MovingViolationsManagerView {
 		System.out.println("Minimax: [" + minimax[0] + ", " + minimax[1] + "], [" + minimax[2] + ", " + minimax[3] + "]");
 	}
 	
-	public void printReq1A(IQueue<InfraccionesFranjaHoraria> resultados) {
-		for(InfraccionesFranjaHoraria vinfraFranjas: resultados) {
+	public void printReq1A(IQueue<InfraccionesFranjaHoraria> resultados) 
+	{
+		for(InfraccionesFranjaHoraria vinfraFranjas: resultados) 
+		{
 			System.out.println(vinfraFranjas.toString());
 			
 			/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
@@ -61,84 +65,100 @@ public class MovingViolationsManagerView {
 		}
 	}
 	
-	public void printReq2A(InfraccionesLocalizacion resultado) {
+	public void printReq2A(InfraccionesLocalizacion resultado) 
+	{
 		System.out.println(resultado.toString());
 		
 		/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 		/*
-		for(VOMovingViolations v: resultado.getListaInfracciones()) {
+		for(VOMovingViolations v: resultado.getListaInfracciones()) 
+		{
 			System.out.println(v.toString());
 		}
 		*/
 	}
 	
-	public void printReq3A(IQueue<InfraccionesFecha> resultados) {
+	public void printReq3A(IQueue<InfraccionesFecha> resultados)
+	{
 		for(InfraccionesFecha infraFechas: resultados) {
 			System.out.println(infraFechas.toString());
 			/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 			/*
-			for(VOMovingViolations vo: infraFechas.getListaInfracciones()) {
+			for(VOMovingViolations vo: infraFechas.getListaInfracciones()) 
+			{
 				System.out.println(vo.toString());
 			}
 			*/
 		}
 	}
 	
-	public void printReq1B(IQueue<InfraccionesViolationCode> resultados) {
-		for(InfraccionesViolationCode infraVioCode: resultados) {
+	public void printReq1B(IQueue<InfraccionesViolationCode> resultados) 
+	{
+		for(InfraccionesViolationCode infraVioCode: resultados)
+		{
 			System.out.println(infraVioCode.toString());
 			/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 			/*
-			for(VOMovingViolations vo: infraVioCode.getListaInfracciones()) {
+			for(VOMovingViolations vo: infraVioCode.getListaInfracciones())
+			{
 				System.out.println(vo.toString());
 			}
 			*/
 		}
 	}
 	
-	public void printReq2B(InfraccionesLocalizacion resultado) {
+	public void printReq2B(InfraccionesLocalizacion resultado) 
+	{
 		System.out.println(resultado.toString());
 		/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 		/*
-		for(VOMovingViolations v: resultado.getListaInfracciones()) {
+		for(VOMovingViolations v: resultado.getListaInfracciones()) 
+		{
 			System.out.println(v.toString());
 		}
 		*/
 	}
 	
 	
-	public void printReq3B(IQueue<InfraccionesFechaHora> resultados) {
+	public void printReq3B(IQueue<InfraccionesFechaHora> resultados)
+	{
 		for(InfraccionesFechaHora infraFechas: resultados) {
 			System.out.println(infraFechas.toString());
 			/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 			/*
-			for(VOMovingViolations vo: infraFechas.getListaInfracciones()) {
+			for(VOMovingViolations vo: infraFechas.getListaInfracciones())
+			 {
 				System.out.println(vo.toString());
 			}
 			*/
 		}
 	}
 	
-	public void printReq1C(InfraccionesLocalizacion resultado) {
+	public void printReq1C(InfraccionesLocalizacion resultado)
+	{
 		System.out.println(resultado.toString());
 		/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 		/*		
-		for(VOMovingViolations v: resultado.getListaInfracciones()) {
+		for(VOMovingViolations v: resultado.getListaInfracciones())
+		 {
 			System.out.println(v.toString());
 		}
 		*/
 	}
 	
-	public void printReq2C(InfraccionesFranjaHorariaViolationCode resultado) {
+	public void printReq2C(InfraccionesFranjaHorariaViolationCode resultado) 
+	{
 		System.out.println(resultado.toString());
 		
 		
-		for(InfraccionesViolationCode v: resultado.getInfViolationCode()) {
+		for(InfraccionesViolationCode v: resultado.getInfViolationCode()) 
+		{
 			System.out.println(v.toString());
 
 			/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 			/*
-			for(VOMovingViolations vv: v.getListaInfracciones()) {
+			for(VOMovingViolations vv: v.getListaInfracciones())
+			 {
 				System.out.println(vv.toString());
 			}
 			*/
@@ -146,19 +166,23 @@ public class MovingViolationsManagerView {
 
 		/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 		/*
-		for(VOMovingViolations v: resultado.getListaInfracciones()) {
+		for(VOMovingViolations v: resultado.getListaInfracciones()) 
+		{
 			System.out.println(v.toString());
 		}
 		*/
 	}
 	
 	
-	public void printReq3C(IQueue<InfraccionesLocalizacion> resultados) {
-		for(InfraccionesLocalizacion infraLoc: resultados) {
+	public void printReq3C(IQueue<InfraccionesLocalizacion> resultados) 
+	{
+		for(InfraccionesLocalizacion infraLoc: resultados) 
+		{
 			System.out.println(infraLoc.toString());
 			/* Detalle de las infracciones (Se requiere SOLO en caso de validacion)*/
 			/*		
-			for(VOMovingViolations vo: infraLoc.getListaInfracciones()) {
+			for(VOMovingViolations vo: infraLoc.getListaInfracciones()) 
+			{
 				System.out.println(vo.toString());
 			}
 			*/
@@ -166,7 +190,8 @@ public class MovingViolationsManagerView {
 	}
 	
 	
-	public void printReq4C(Contenedora<InfraccionesViolationCode> resultados) {
+	public void printReq4C(Contenedora<InfraccionesViolationCode> resultados) 
+	{
 		//TODO La estructura Contenedora depende del metodo que retorna el resultado
 		//TODO Imprimir grafica ASCII con los codigos ordenados (de mayor a menor) por el total de sus infracciones 
 	}
