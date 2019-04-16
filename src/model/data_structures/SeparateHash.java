@@ -12,7 +12,7 @@ public class SeparateHash<K extends Comparable<K>,V>  implements ITablaHash<K,V>
 
 
 
-	public SeparateChainingHash(int m)
+	public SeparateHash(int m)
 	{
 		capacidad=m;
 		arreglo = new Nodo[m];
