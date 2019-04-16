@@ -436,6 +436,7 @@ public class MovingViolationsManager {
 		
 	}
 
+	
 	/**
 	 * Requerimiento 1C: Obtener  la información de  una  addressId dada
 	 * @param  int addressID: Localización de la consulta.
@@ -448,7 +449,9 @@ public class MovingViolationsManager {
 		double ycoor = 0;
 		
 		String locat = "";
+		
 		int address = 0;
+		
 		
 		
 		int street = 0;
