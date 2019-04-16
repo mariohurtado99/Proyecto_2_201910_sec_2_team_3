@@ -446,6 +446,7 @@ public class MovingViolationsManager {
 		InfraccionesLocalizacion resp = new InfraccionesLocalizacion(0, 0, "", 0, 0, new Queue<VOMovingViolations>());
 		double xcoor = 0;
 		double ycoor = 0;
+		
 		String locat = "";
 		int address = 0;
 		
